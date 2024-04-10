@@ -60,6 +60,7 @@ public class Main {
                 default:
                     System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
                     break;
+
             }
         //Salir
         } while (opcion != 9);
