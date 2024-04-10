@@ -2,30 +2,34 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner datos = new Scanner(System.in);
         String nombreCliente = "Tony Stark";
         String tipoCuenta = "Corriente";
         double saldoDisponible = 1599.99;
-        System.out.println();
+
+        //muestra los datos del cliente en pantalla
         System.out.println("****************************************");
-        System.out.println();
         System.out.println("Nombre del Cliente: " + nombreCliente);
         System.out.println("Tipo de cuenta: " + tipoCuenta);
         System.out.println("Saldo disponible: L" + saldoDisponible);
-        System.out.println();
         System.out.println("****************************************");
+        System.out.println();
+
+        String menu = """
+            ** Escriba el número de la opción deseada **
+            1 - Consultar Saldo
+            2 - Retirar
+            3 - Depositar
+            9 - Salir""";
 
         int opcion;
+        Scanner datos = new Scanner(System.in);
+
         do {
-            System.out.println("** Escriba el número de la opción deseada **");
-            System.out.println("1 - Consultar Saldo");
-            System.out.println("2 - Retirar");
-            System.out.println("3 - Depositar");
-            System.out.println("9 - Salir");
+            //muestra el menú en pantalla
+            System.out.println(menu);
             System.out.println();
-
             opcion = datos.nextInt();
-
+            //inicia el proceso de validación y ejecución según la opción elegida por el cliente
             switch (opcion) {
                 case 1:
                     System.out.println("Su saldo actual es de: L" + saldoDisponible);
@@ -57,6 +61,7 @@ public class Main {
                     System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
                     break;
             }
+        //Salir
         } while (opcion != 9);
 
         datos.close();
